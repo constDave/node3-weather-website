@@ -11,11 +11,12 @@ const forecast = (latitude, longitude, callback) => {
     } else {
       callback(undefined, {
 
-        forecast: `${response.body.current.weather_descriptions[0]} Skies. It is ${response.body.current.temperature} degrees outside in ${response.body.location.name}. It feels like ${response.body.current.feelslike}. `
+        forecast: `${response.body.current.weather_descriptions[0]} Skies. It is ${response.body.current.temperature} degrees outside in ${response.body.location.name}. It feels like ${response.body.current.feelslike} and the humidity is ${response.body.current.humidity}%. `,
+        time_of_day: response.body.current.is_day
       });
       
       const weatherMsg = `${response.body.current.weather_descriptions[0]} Skies. It is ${response.body.current.temperature} degrees outside in ${response.body.location.name}. It feels like ${response.body.current.feelslike}. `
-      console.log(weatherMsg);
+      console.log(response.body);
        
     }
   });

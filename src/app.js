@@ -60,7 +60,8 @@ app.get("/weather", (req, res) => {
       res.send({
         forecast: response.forecast,
         address: req.query.address,
-        location: data.location
+        location: data.location,
+        time_of_day: response.time_of_day
       });
     });
   });

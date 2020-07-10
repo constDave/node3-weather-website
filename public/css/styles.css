@@ -1,5 +1,6 @@
 body {
   color: #333333;
+
   font-family: Arial, Helvetica, sans-serif;
   max-width: 650px;
   margin: 0 auto;
@@ -9,8 +10,29 @@ body {
   min-height: 100vh;
 }
 
+@keyframes animatedBackground {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 100% 0;
+  }
+}
+
+.animate-area {
+  width: 560px;
+  height: 400px;
+  background-image: url(/img/night_sky.jpeg);
+  background-position: 0px 0px;
+  background-repeat: repeat-x;
+  animation: animatedBackground 35s linear infinite;
+}
+
 .main-content {
   flex-grow: 1;
+  color: white;
+  padding: 20px;
+  background-color: rgba(0, 255, 200, 0.05);
 }
 footer {
   color: #888888;
@@ -36,7 +58,7 @@ header a {
 }
 
 input {
-  padding:6px;
+  padding: 6px;
   border: 1px solid #cccccc;
 }
 
